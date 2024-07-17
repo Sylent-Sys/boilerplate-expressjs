@@ -26,6 +26,9 @@ importers:
       typescript:
         specifier: ^5.2.2
         version: 5.5.2
+      zod:
+        specifier: ^3.23.8
+        version: 3.23.8
     devDependencies:
       '@types/archiver':
         specifier: ^6.0.2
@@ -1411,6 +1414,9 @@ packages:
     resolution: {integrity: sha512-LfOdrUvPB8ZoXtvOBz6DlNClfvi//b5d56mSWyJi7XbH/HfhOHfUhOqxhT/rUiR7yiktlunqRo+jY6y/cWC/5g==}
     engines: {node: '>= 12.0.0'}
 
+  zod@3.23.8:
+    resolution: {integrity: sha512-XBx9AXhXktjUqnepgTiE5flcKIYWi/rme0Eaj+5Y0lftuGBq+jyRu/md4WnuxqgP1ubdpNCsYEYPxrzVHD8d6g==}
+
 snapshots:
 
   '@esbuild/aix-ppc64@0.21.5':
@@ -2723,3 +2729,5 @@ snapshots:
       archiver-utils: 4.0.1
       compress-commons: 5.0.3
       readable-stream: 3.6.2
+
+  zod@3.23.8: {}
