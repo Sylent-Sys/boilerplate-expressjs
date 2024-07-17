@@ -11,6 +11,6 @@ const __dirname = dirname(__filename);
 app.use(cors())
 app.use(express.json())
 app.use("/", await router({
-    directory: path.join(__dirname, "routes"),
+    directory: path.join(__dirname + "/../", "routes"),
 }))
 export default app
