@@ -1,8 +1,8 @@
 import { test, describe } from 'vitest';
 import request from "supertest";
-import app from "../../dist/server.js";
+import server from "@/lib/server.js"
 describe("Test the initial path", () => {
     test("/", async () => {
-        return await request(app).get("/").expect(200);
+        return await request(server).get("/").expect(200);
     });
 });
