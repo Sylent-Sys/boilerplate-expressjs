@@ -7,6 +7,6 @@ export default defineConfig({
     ],
     test: {
         exclude: ["node_modules", "src/tests/*"],
-        include: ["dist/tests/*"],
+        include: ["dist/src/tests/*"],
     }
 })
