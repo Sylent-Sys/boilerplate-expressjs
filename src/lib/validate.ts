@@ -6,6 +6,8 @@ export const EnvSchema = z.object({
     APP_PORT: z.string(),
 });
 
+export const RoleSchema = z.enum(["USER", "ADMIN"]);
+
 const validateEnv = EnvSchema.safeParse(process.env);
 if (!validateEnv.success) {
     console.error(validateEnv.error.errors);
