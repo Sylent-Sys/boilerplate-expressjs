@@ -8,16 +8,13 @@
     "outDir": "dist",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
-    "baseUrl": "./src",
+    "baseUrl": ".",
     "paths": {
       "@/*": [
-        "./*"
+        "src/*"
       ]
     }
   },
-  "include": [
-    "src",
-  ],
   "exclude": [
     "node_modules"
   ]
