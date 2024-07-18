@@ -1,7 +1,7 @@
 import { User } from "@prisma/client";
 import * as argon2 from "argon2";
 import * as jose from 'jose'
-import UserService from "./user.service.js";
+import UserService from "@/service/user.service.js";
 export default class AuthService {
     async register({ email, password }: Pick<User, "email" | "password">) {
         return await new UserService().create({ email, password });
