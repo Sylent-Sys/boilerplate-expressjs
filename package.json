@@ -5,11 +5,11 @@
   "main": "src/app.ts",
   "type": "module",
   "scripts": {
-    "start": "node --experimental-vm-modules dist/app.js",
+    "start": "node --experimental-vm-modules dist/src/app.js",
     "dev": "nodemon --exec tsx src/app.ts",
-    "build": "tsc -b tsconfig.json",
-    "test:ui": "vitest --ui",
-    "test:run": "vitest run",
+    "build": "tsc -b tsconfig.json && tsc-alias",
+    "test:ui": "tsc -b tsconfig.json && tsc-alias && vitest --ui",
+    "test:run": "tsc -b tsconfig.json && tsc-alias && vitest run ",
     "release": "tsx src/release.ts"
   },
   "keywords": [],
@@ -26,8 +26,10 @@
     "@vitest/ui": "^1.6.0",
     "nodemon": "^3.0.1",
     "supertest": "^6.3.3",
+    "tsc-alias": "^1.8.10",
     "tsx": "^3.12.7",
-    "vitest": "^1.2.2"
+    "vite-tsconfig-paths": "^4.3.2",
+    "vitest": "^2.0.3"
   },
   "dependencies": {
     "@prisma/client": "5.17.0",
