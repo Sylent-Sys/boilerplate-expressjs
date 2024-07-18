@@ -8,6 +8,7 @@
     "start": "node --experimental-vm-modules dist/src/app.js",
     "dev": "nodemon --exec tsx src/app.ts",
     "build": "tsc -b tsconfig.json && tsc-alias",
+    "build:watch": "tsc && (concurrently \"tsc -w\" \"tsc-alias -w\")",
     "test:ui": "tsc -b tsconfig.json && tsc-alias && vitest --ui",
     "test:run": "tsc -b tsconfig.json && tsc-alias && vitest run ",
     "release": "tsx src/release.ts"
@@ -24,6 +25,7 @@
     "@types/express": "^4.17.17",
     "@types/supertest": "^2.0.12",
     "@vitest/ui": "^1.6.0",
+    "concurrently": "^8.2.2",
     "nodemon": "^3.0.1",
     "supertest": "^6.3.3",
     "tsc-alias": "^1.8.10",
