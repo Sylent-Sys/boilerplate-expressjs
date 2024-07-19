@@ -1,5 +1,5 @@
 import { Handler } from "express";
-import AuthService from "../../service/auth.service.js";
+import AuthService from "@/service/auth.service.js";
 import userCreateDto from "@/dto/user.create.dto.js";
 import { ZodError } from "zod";
 
