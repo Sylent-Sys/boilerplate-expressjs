@@ -13,11 +13,11 @@ export const put: Handler[] = [
             if (!req.params.id) {
                 throw new Error("User ID is required");
             }
-            const validateBody = userUpdateDto.safeParse(req.body);
+            const validateBody = userUpdateDto.safeParse({ ...req.body, id: req.params.id });
             if (!validateBody.success) {
                 throw new ZodError(validateBody.error.errors);
             }
-            const result = await new UserService().update({ ...validateBody.data, id: req.params.id });
+            const result = await new UserService().update({ ...validateBody.data });
             return res.json({
                 msg: "User updated successfully",
                 user: result,
