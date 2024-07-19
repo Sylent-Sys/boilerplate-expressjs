@@ -54,4 +54,11 @@ export default class UserService {
             role: result.role,
         };
     }
+    async delete({ id }: Pick<User, "id">) {
+        return prisma.user.delete({
+            where: {
+                id,
+            },
+        });
+    }
 }

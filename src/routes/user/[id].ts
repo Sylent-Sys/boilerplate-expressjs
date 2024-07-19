@@ -33,3 +33,27 @@ export const put: Handler[] = [
         }
     }
 ];
+
+export const del: Handler[] = [
+    authJwt(),
+    authorization(["ADMIN"]),
+    async (req, res) => {
+        try {
+            if (!req.params.id) {
+                throw new Error("User ID is required");
+            }
+            await new UserService().delete({ id: req.params.id });
+            return res.json({
+                msg: "User deleted successfully",
+            });
+        } catch (error: unknown) {
+            if (error instanceof ZodError) {
+                return res.status(400).json({ msg: error.format() });
+            } else if (error instanceof Error) {
+                return res.status(400).json({ msg: error.message });
+            } else {
+                return res.status(500).json({ msg: "An unexpected error occurred" });
+            }
+        }
+    }
+];
