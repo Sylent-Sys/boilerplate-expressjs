@@ -8,7 +8,7 @@
     "start": "node --experimental-vm-modules dist/app.js",
     "dev": "nodemon --exec tsx src/app.ts",
     "build": "tsc -b tsconfig.json && tsc-alias",
-    "build:watch": "tsc && (concurrently \"tsc -w\" \"tsc-alias -w\")",
+    "build:watch": "tsc && (concurrently --kill-others \"tsc -w\" \"tsc-alias -w\")",
     "test:ui": "tsc -b tsconfig.json && tsc-alias && vitest --ui",
     "test:run": "tsc -b tsconfig.json && tsc-alias && vitest run ",
     "release": "tsx src/release.ts"
